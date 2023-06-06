@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Navbar from './component/Navbar';
+import Greeting from './component/Greeting';
+import Post from './component/Post';
+
+const posts = [
+  { id: 1, title: 'Lass Uns React lernen!' },
+  { id: 2, title: 'Wie konnen Wir Node.js installrieren?' },
+  { id: 3, title: 'Einführung die HTML' },
+];
 
 function App() {
+  console.log('Hello World');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Greeting name="Tim" />
+
+      <div>
+        {posts.map(({ id, title }) => {
+          return <Post key={id} title={title} id={id} />;
+        })}
+      </div>
     </div>
   );
 }

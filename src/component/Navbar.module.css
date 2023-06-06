@@ -1,0 +1,5 @@
+.navcon1 {
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-between;
+}
