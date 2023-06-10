@@ -1,13 +1,20 @@
 import React from 'react';
-import navbar from './Navbar.module.css';
+import classes from './Navbar.module.css';
+import { NavLink } from 'react-router-dom';
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <div className={navbar.navcon1}>
-      <p>logo</p>
-      <p>login</p>
-    </div>
+    <nav className={classes.navbar}>
+      <p>Navbar</p>
+      <NavLink to="/" className={(arg) => (arg.isActive ? classes.Active : undefined)}>
+        Tasks
+      </NavLink>
+      <NavLink to="/profile" className={(arg) => (arg.isActive ? classes.Active : undefined)}>
+        Profile
+      </NavLink>
+      <button className={classes.login}>Login</button>
+    </nav>
   );
-}
+};
 
 export default Navbar;

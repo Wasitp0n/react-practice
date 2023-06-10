@@ -1,27 +1,35 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Navbar from './component/Navbar';
-import Greeting from './component/Greeting';
-import Post from './component/Post';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
 
-const posts = [
-  { id: 1, title: 'Lass Uns React lernen!' },
-  { id: 2, title: 'Wie konnen Wir Node.js installrieren?' },
-  { id: 3, title: 'Einführung die HTML' },
-];
+// * Data from database
 
+// const initPosts = [
+//   {
+//     id: 1,
+//     title: "Let's learn React!",
+//   },
+//   {
+//     id: 2,
+//     title: 'How to install Node.js',
+//   },
+//   {
+//     id: 3,
+//     title: 'Basic HTML',
+//   },
+// ];
 function App() {
-  console.log('Hello World');
   return (
     <div className="App">
       <Navbar />
-      <Greeting name="Tim" />
-
-      <div>
-        {posts.map(({ id, title }) => {
-          return <Post key={id} title={title} id={id} />;
-        })}
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </div>
   );
 }

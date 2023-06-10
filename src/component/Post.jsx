@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './Post.module.css';
 
-const Post = ({ id, title }) => {
-  console.log(id);
-  const handleClick = (id) => {
-    alert(`Nach Klicken ${id} clicked`);
+const Post = (props) => {
+  const { post } = props;
+  const [isShow, setIsShow] = useState(false);
+
+  const toggleShow = () => {
+    setIsShow(!isShow);
   };
+
   return (
-    <div onClick={() => handleClick(id)} className={classes.post}>
-      <p>id: {id}</p>
-      <p>title: {title}</p>
+    <div className={classes.post}>
+      <p>id: {post.id}</p>
+      <p>title: {post.title}</p>
+      {isShow && <p>more post information...</p>}
+      <button onClick={toggleShow}>{isShow ? 'Show Less' : 'Show More'}</button>
     </div>
   );
 };
