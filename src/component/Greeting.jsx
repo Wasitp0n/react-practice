@@ -17,9 +17,9 @@ const Greeting = (props) => {
         <p>{name}</p>
         {/* <p>{isLogin ? name : 'Unknown'}</p> */}
       </div>
-      <button onClick={handleClick}>Change name</button>
-      <Button variant="primary">Primary</Button> <Button variant="secondary">Secondary</Button>{' '}
-      <Button variant="success">Success</Button> <Button variant="warning">Warning</Button>{' '}
+      <Button variant="success" onClick={handleClick}>
+        Change Name
+      </Button>{' '}
     </>
   );
 };

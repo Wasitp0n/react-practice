@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import Post from '../component/Post';
 import UsePosts from '../hooks/UsePost';
 
@@ -7,7 +6,6 @@ const Home = () => {
   const [newPostTitle, setNewPostTitle] = useState('');
   const [newPostBody, setNewPostBody] = useState('');
   const { posts, setNewPosts, isLoading } = UsePosts();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

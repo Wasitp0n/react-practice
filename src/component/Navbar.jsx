@@ -12,6 +12,9 @@ const Navbar = () => {
       <NavLink to="/profile" className={(arg) => (arg.isActive ? classes.Active : undefined)}>
         Profile
       </NavLink>
+      {/* <NavLink to="/addData" className={(arg) => (arg.isActive ? classes.Active : undefined)}>
+        add Data
+      </NavLink> */}
       <button className={classes.login}>Login</button>
     </nav>
   );
